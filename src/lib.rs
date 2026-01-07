@@ -1,10 +1,10 @@
 //! # TypeSwitch
 //!
-//! `typeswitch` provides a powerful, Go-inspired macro to perform runtime type switching 
+//! `typeswitch` provides a powerful, Go-inspired macro to perform runtime type switching
 //! on `dyn Any` trait objects in Rust.
 //!
-//! While Rust's `match` statement is powerful for enums, it cannot natively branch based 
-//! on the concrete type of a trait object. This crate bridges that gap with a clean, 
+//! While Rust's `match` statement is powerful for enums, it cannot natively branch based
+//! on the concrete type of a trait object. This crate bridges that gap with a clean,
 //! block-based syntax that supports:
 //!
 //! - **Immutable and Mutable access** to the underlying data.
@@ -12,7 +12,6 @@
 //! - **Go-style Binding**: Automatically bind the downcasted value to a variable for all branches.
 //! - **Or-Patterns**: Match against multiple types in a single branch.
 //! - **Attribute Support**: Apply `#[cfg]` or other attributes directly to switch arms.
-
 
 /// A powerful macro to emulate a type switch statement for `dyn Any` trait objects.
 ///
@@ -71,7 +70,7 @@
 /// ```
 ///
 /// ## 3. Owned Consumption (Moving out of Box)
-/// Use the `box` keyword to take ownership of the value. This branch will only 
+/// Use the `box` keyword to take ownership of the value. This branch will only
 /// execute if the type matches, and it will consume the `Box`.
 ///
 /// ```rust
@@ -100,7 +99,7 @@
 /// ```
 ///
 /// ## 5. Automatic Binding (Go-style)
-/// By providing a variable name before the block, that name is automatically 
+/// By providing a variable name before the block, that name is automatically
 /// bound to the downcasted type in every branch.
 /// ```rust
 /// # use typeswitch::typeswitch;
@@ -340,7 +339,7 @@ mod tests {
             }
         };
         assert_eq!(result, "string Hello");
-    }    
+    }
 
     #[test]
     fn test_expression_return() {
@@ -356,14 +355,14 @@ mod tests {
     #[test]
     fn test_or_pattern() {
         let x: Box<dyn Any> = Box::new(10i64);
-        
+
         let res = typeswitch! { x {
                 f32 | f64 => { "float" }
                 i32 | i64 => { "int" }
                 _ => { "other" }
             }
         };
-        
+
         assert_eq!(res, "int");
     }
 
