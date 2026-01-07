@@ -1,0 +1,14 @@
+[package]
+name = "typeswitch"
+version = "0.1.0"
+edition = "2024"
+authors = ["Victor <victorayo206@example.com>"]
+description = "A powerful, Go-inspired macro for clean and declarative runtime type switching on dyn Any trait objects."
+readme = "README.md"
+repository = "https://github.com/veecore/typeswitch"
+documentation = "https://docs.rs/typeswitch"
+license = "MIT OR Apache-2.0"
+keywords = ["any", "downcast", "macro", "typeswitch", "dynamic"]
+categories = ["rust-patterns", "development-tools::procedural-macros"]
+
+[dependencies]
