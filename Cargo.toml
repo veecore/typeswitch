@@ -9,6 +9,6 @@ repository = "https://github.com/veecore/typeswitch"
 documentation = "https://docs.rs/typeswitch"
 license = "MIT OR Apache-2.0"
 keywords = ["any", "downcast", "macro", "typeswitch", "dynamic"]
-categories = ["rust-patterns", "development-tools::procedural-macros"]
+categories = ["rust-patterns", "development-tools::procedural-macro-helpers"]
 
 [dependencies]
